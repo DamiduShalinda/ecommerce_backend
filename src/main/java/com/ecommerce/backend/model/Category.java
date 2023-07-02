@@ -3,8 +3,9 @@ package com.ecommerce.backend.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
-@Table
 @Entity
 public class Category {
 
@@ -13,10 +14,11 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
 
-    @Column
     private String categoryName;
-    @Column
     private String categoryDescription;
+
+    @OneToMany(mappedBy = "category")
+    private List<Product> products;
 
     public Category() {
 
