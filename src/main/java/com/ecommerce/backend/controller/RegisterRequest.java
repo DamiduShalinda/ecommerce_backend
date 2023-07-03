@@ -1,6 +1,7 @@
 package com.ecommerce.backend.controller;
 
 
+import com.ecommerce.backend.model.Role;
 import lombok.*;
 
 @Data
@@ -13,4 +14,5 @@ public class RegisterRequest {
     private String lastName;
     private String email;
     private String password;
+    private Role role;
 }
